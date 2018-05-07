@@ -2,8 +2,8 @@
 
 # Sprint 1 - Deadline May 7th
 - [X] Scaffolding
+- [X] Add support preprocessor
 - [ ] Structure
-- [ ] Add support preprocessor
 
 # Sprint 2 - Deadline May 8th
 - [ ] HTML Tab
