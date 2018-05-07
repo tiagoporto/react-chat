@@ -1,3 +1,4 @@
 {
-  "welcome": "Welcome to React"
+  "welcome": "Welcome to React",
+  "start": "To get started, edit src/App.js and save to reload."
 }
