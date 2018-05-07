@@ -4,7 +4,7 @@
 - [X] Scaffolding
 - [X] Add support preprocessor
 - [X] Structure
-- [X] CSS scaffold
+- [ ] Main CSS
 
 # Sprint 2 - Deadline May 8th
 - [ ] I18n
