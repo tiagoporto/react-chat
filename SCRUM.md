@@ -3,25 +3,26 @@
 # Sprint 1 - Deadline May 7th
 - [X] Scaffolding
 - [X] Add support preprocessor
-- [ ] Structure
+- [X] Structure
+- [X] CSS scaffold
 
 # Sprint 2 - Deadline May 8th
+- [ ] I18n
 - [ ] HTML Tab
 - [ ] CSS Tab (Light)
-- [ ] CSS Tab (Dark)
 - [ ] CSS Tab (Responsive)
 - [ ] HTML Settings Page
 - [ ] HTML Chat Page
 - [ ] CSS Settings Page (Light)
-- [ ] CSS Settings Page (Dark)
 - [ ] CSS Settings Page (Responsive)
 - [ ] CSS Chat Page (Light)
-- [ ] CSS Chat Page (Dark)
 - [ ] CSS Chat Page (Responsive)
 
 # Sprint 3 - Deadline May 9th
+- [ ] CSS Tab (Dark)
+- [ ] CSS Chat Page (Dark)
+- [ ] CSS Settings Page (Dark)
 - [ ] I18n Local Storage
-- [ ] I18n
 - [ ] User name Local Storage
 - [ ] Interface color Local Storage
 - [ ] Reset Local Storage
