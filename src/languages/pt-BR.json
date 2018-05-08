@@ -1,7 +1,28 @@
 {
+  "chat": {
+    "title": "Chat",
+    "send": "Enviar",
+    "enter_message": "Digite a mensagem"
+  },
+  "settings": {
+    "title": "Configurações",
+    "reset": "Redefinir para o padrão",
+    "user_name": "Nome do Usuário",
+    "interface_color": "Cor da interface",
+    "interface_light": "Clara",
+    "interface_dark": "Escura",
+    "language": "Idioma",
+    "clock_display": "Formato do Relógio",
+    "12_hours": "12 Horas",
+    "24_hours": "24 Horas",
+    "message_sounds": "Som de menssage",
+    "send_ctrl": "Enviar ensagem com CTRL+ENTER",
+    "on": "Ligado",
+    "off": "Desligado"
+  },
   "title": "React Chat",
-  "chat": "Chat",
-  "settings": "Configurações",
-  "send": "Enviar",
-  "reset": "Redefinir para o padrão"
+  "languages": {
+    "en": "English",
+    "pt-BR": "Português (Brasil)"
+  }
 }

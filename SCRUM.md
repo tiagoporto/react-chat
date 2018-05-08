@@ -7,7 +7,7 @@
 - [X] Main CSS
 
 # Sprint 2 - Deadline May 8th
-- [ ] I18n
+- [X] I18n
 - [X] HTML Tab
 - [ ] CSS Tab (Light)
 - [ ] CSS Tab (Responsive)

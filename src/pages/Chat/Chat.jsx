@@ -5,11 +5,13 @@ import T from 'i18n-react'
 class Chat extends Component {
   render () {
     return (
-      <div className="chat">
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+      <form>
+        <textarea name="" id="" cols="30" rows="10" placeholder={T.translate('chat.enter_message')}></textarea>
 
-        <button className="button is-primary is-large" onClick={this.changeLanguage}>{T.translate('send')}</button>
-      </div>
+        <button className="button is-primary is-large">
+          {T.translate('chat.send')}
+        </button>
+      </form>
     )
   }
 }

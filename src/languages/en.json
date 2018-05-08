@@ -1,7 +1,28 @@
 {
+  "chat": {
+    "title": "Chat",
+    "send": "Send",
+    "enter_message": "Enter message"
+  },
+  "settings": {
+    "title": "Settings",
+    "reset": "Reset to Defaults",
+    "user_name": "User Name",
+    "interface_color": "Interface Color",
+    "interface_light": "Light",
+    "interface_dark": "Dark",
+    "language": "Language",
+    "clock_display": "Clock Display",
+    "12_hours": "12 Hours",
+    "24_hours": "24 Hours",
+    "message_sounds": "Message Sounds",
+    "send_ctrl": "Send messages on CTRL+ENTER",
+    "on": "On",
+    "off": "Off"
+  },
   "title": "React Chat",
-  "chat": "Chat",
-  "settings": "Settings",
-  "send": "Send",
-  "reset": "Reset to Defaults"
+  "languages": {
+    "en": "English",
+    "pt-BR": "Português (Brasil)"
+  }
 }

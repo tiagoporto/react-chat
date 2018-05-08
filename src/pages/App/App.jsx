@@ -7,27 +7,6 @@ import './App.styl'
 T.setTexts(require('../../languages/en.json'))
 
 class App extends Component {
-  constructor (props) {
-    super(props)
-    this.state = { language: 'eng' }
-
-    this.changeLanguage = this.changeLanguage.bind(this)
-  }
-
-  changeLanguage () {
-    if (this.state.language === 'eng') {
-      T.setTexts(require('../../languages/pt-BR.json'))
-      this.setState(
-        {language: 'brl'}
-      )
-    } else {
-      T.setTexts(require('../../languages/en.json'))
-      this.setState(
-        {language: 'eng'}
-      )
-    }
-  }
-
   render () {
     return (
       <div className="App">
@@ -37,8 +16,6 @@ class App extends Component {
         </header>
 
         <Tab></Tab>
-
-        <button className="button is-primary is-large" onClick={this.changeLanguage}>change text</button>
       </div>
     )
   }
