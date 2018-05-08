@@ -12,10 +12,10 @@
     "interface_light": "Clara",
     "interface_dark": "Escura",
     "language": "Idioma",
-    "clock_display": "Formato do Relógio",
+    "clock_display": "Formato de Horas",
     "12_hours": "12 Horas",
     "24_hours": "24 Horas",
-    "message_sounds": "Som de menssage",
+    "message_sounds": "Som de mensagem",
     "send_ctrl": "Enviar ensagem com CTRL+ENTER",
     "on": "Ligado",
     "off": "Desligado"
@@ -23,6 +23,7 @@
   "title": "React Chat",
   "languages": {
     "en": "English",
-    "pt-BR": "Português (Brasil)"
+    "pt-BR": "Português (Brasil)",
+    "fr": "Français"
   }
 }

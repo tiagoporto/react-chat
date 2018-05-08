@@ -1,0 +1,29 @@
+{
+  "chat": {
+    "title": "Chat",
+    "send": "Envoyer",
+    "enter_message": "Saisissez le message"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "reset": "Renverser vers les paramètres standart",
+    "user_name": "Nom d'Utilisateur",
+    "interface_color": "Couleur de l'inteface",
+    "interface_light": "Claire",
+    "interface_dark": "Foncée",
+    "language": "Langue",
+    "clock_display": "Format d'Heure",
+    "12_hours": "12 Heures",
+    "24_hours": "24 Heures",
+    "message_sounds": "Son de message",
+    "send_ctrl": "Envoyer message avec CTRL+ENTER",
+    "on": "Activé",
+    "off": "Désactivé"
+  },
+  "title": "React Chat",
+  "languages": {
+    "en": "English",
+    "pt-BR": "Português (Brasil)",
+    "fr": "Français"
+  }
+}
