@@ -1,16 +1,17 @@
+// @flow
 import React, { Component } from 'react'
 import T from 'i18n-react'
-// import './Settings.styl'
 
-class Settings extends Component {
-  constructor (props) {
-    super(props)
-    this.state = { language: 'eng' }
+type State = {
+  language: string
+}
 
-    this.changeLanguage = this.changeLanguage.bind(this)
+class Settings extends Component<{}, State> {
+  state = {
+    language: 'eng'
   }
 
-  changeLanguage () {
+  changeLanguage = () => {
     if (this.state.language === 'eng') {
       T.setTexts(require('../../languages/pt-BR.json'))
       this.setState(

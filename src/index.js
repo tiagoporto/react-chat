@@ -1,3 +1,4 @@
+// @flow
 import './main.styl'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -13,5 +14,5 @@ const routes = (
   </BrowserRouter>
 )
 
-ReactDOM.render(routes, document.getElementById('root'))
+ReactDOM.render(routes, (document.getElementById('root'): any))
 registerServiceWorker()

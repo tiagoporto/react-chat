@@ -1,6 +1,6 @@
+// @flow
 import React, { Component } from 'react'
 import T from 'i18n-react'
-// import './Chat.styl'
 
 class Chat extends Component {
   render () {
