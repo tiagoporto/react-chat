@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Tab from './components/Tab/Tab'
 import logo from './logo.svg'
 import T from 'i18n-react'
 import './App.styl'
@@ -32,12 +33,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">{T.translate('welcome')}</h1>
+          <h1>{T.translate('title')}</h1>
         </header>
-        <p className="App-intro">
-          {T.translate('start')}
-        </p>
-        <button onClick={this.changeLanguage}>change text</button>
+
+        <Tab></Tab>
+
+        <button className="button is-primary is-large" onClick={this.changeLanguage}>change text</button>
       </div>
     )
   }

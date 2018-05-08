@@ -4,11 +4,11 @@
 - [X] Scaffolding
 - [X] Add support preprocessor
 - [X] Structure
-- [ ] Main CSS
+- [X] Main CSS
 
 # Sprint 2 - Deadline May 8th
 - [ ] I18n
-- [ ] HTML Tab
+- [X] HTML Tab
 - [ ] CSS Tab (Light)
 - [ ] CSS Tab (Responsive)
 - [ ] HTML Settings Page

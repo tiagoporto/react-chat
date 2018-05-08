@@ -196,7 +196,10 @@ module.exports = {
                     {
                       loader: require.resolve('stylus-loader'),
                       options: {
-                        sourceMap: false
+                        sourceMap: false,
+                        'include': [
+                          'node_modules'
+                        ]
                       }
                     }
                   ],

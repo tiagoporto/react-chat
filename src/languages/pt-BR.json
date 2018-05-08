@@ -1,4 +1,7 @@
 {
-  "welcome": "Bem-vindo ao React",
-  "start": "Para começar, edite src/App.js e salve."
+  "title": "React Chat",
+  "chat": "Chat",
+  "settings": "Configurações",
+  "send": "Enviar",
+  "reset": "Redefinir para o padrão"
 }
