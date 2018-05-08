@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 const routes = (
-  <BrowserRouter>
+  <BrowserRouter basename="/react-chat">
     <Switch>
       <Route path="/" component={App} />
     </Switch>
