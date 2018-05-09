@@ -17,6 +17,7 @@
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "7.1.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-react-app": "^3.1.1",
     "babel-runtime": "6.26.0",
     "bulma-stylus": "^0.4.0",
@@ -43,6 +44,8 @@
     "html-webpack-plugin": "2.29.0",
     "i18n-react": "^0.6.4",
     "jest": "20.0.4",
+    "mobx": "^4.2.1",
+    "mobx-react": "^5.1.2",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -101,6 +104,9 @@
     ]
   },
   "babel": {
+    "plugins": [
+      "transform-decorators-legacy"
+    ],
     "presets": [
       "react-app"
     ]

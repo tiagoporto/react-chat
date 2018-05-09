@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 import App from './pages/App/App'
 import registerServiceWorker from './registerServiceWorker'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+// import store from './pages/Settings/SettingsStore.js'
 
 const routes = (
   <BrowserRouter basename="/react-chat">
