@@ -1,6 +1,7 @@
 import Chat from '../../../Chat/Chat'
 import Settings from '../../../Settings/Settings'
 import React, { Component } from 'react'
+import T from 'i18n-react'
 import { Link, Switch, Route, Redirect } from 'react-router-dom'
 
 class Tab extends Component {
@@ -11,13 +12,13 @@ class Tab extends Component {
           <li className="is-active">
             <Link to={'/chat'}>
               <span className="icon is-small"><i className="fas fa-image" aria-hidden="true"></i></span>
-              {/* <span>{T.translate('chat.title')}</span> */}
+              <span>{T.translate('chat.title')}</span>
             </Link>
           </li>
           <li>
             <Link to={'/settings'}>
               <span className="icon is-small"><i className="fas fa-music" aria-hidden="true"></i></span>
-              {/* <span>{T.translate('settings.title')}</span> */}
+              <span>{T.translate('settings.title')}</span>
             </Link>
           </li>
         </ul>

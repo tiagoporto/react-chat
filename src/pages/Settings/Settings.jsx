@@ -1,33 +1,58 @@
 // @flow
 import React, { Component } from 'react'
-import Language from './componets/Language.jsx'
+import T from 'i18n-react'
 
-class Settings extends Component {
+type State = {
+  language: string
+}
+
+class Settings extends Component<{}, State> {
+  state = {
+    language: 'eng'
+  }
+
+  changeLanguage = () => {
+    if (this.state.language === 'eng') {
+      T.setTexts(require('../../languages/pt-BR.json'))
+      this.setState(
+        {language: 'brl'}
+      )
+    } else {
+      T.setTexts(require('../../languages/en.json'))
+      this.setState(
+        {language: 'eng'}
+      )
+    }
+  }
+
   render () {
     return (
       <form>
         <fieldset>
           <p>
-            {/* <label htmlFor="user-name">{T.translate('settings.user_name')}</label> */}
+            <label htmlFor="user-name">{T.translate('settings.user_name')}</label>
             <input type="text" name="name" id="user-name" defaultValue="small"/>
           </p>
           <p>
-            {/* {T.translate('settings.interface_color')} */}
+            {T.translate('settings.interface_color')}
           </p>
 
           <input type="radio" name="interface" id="interface-light" defaultValue="light"/>
-          {/* <label htmlFor="interface-light">{T.translate('settings.interface_light')}</label> */}
+          <label htmlFor="interface-light">{T.translate('settings.interface_light')}</label>
 
           <input type="radio" name="interface" id="interface_dark" defaultValue="dark"/>
-          {/* <label htmlFor="interface_dark">{T.translate('settings.interface_dark')}</label> */}
+          <label htmlFor="interface_dark">{T.translate('settings.interface_dark')}</label>
 
           <p>
-            {/* {T.translate('settings.language')} */}
-            <Language/>
+            {T.translate('settings.language')}
+            <select name="" id="" onChange={this.changeLanguage}>
+              <option value="en">{T.translate('languages.en')}</option>
+              <option value="pt-BR">{T.translate('languages.pt-BR')}</option>
+            </select>
           </p>
 
           <button className="button is-primary is-large">
-            {/* {T.translate('settings.reset')} */}
+            {T.translate('settings.reset')}
           </button>
         </fieldset>
       </form>
