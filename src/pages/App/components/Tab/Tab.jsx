@@ -5,6 +5,10 @@ import T from 'i18n-react'
 import { Link, Switch, Route, Redirect } from 'react-router-dom'
 
 class Tab extends Component {
+  changeSettings = (props) => {
+    return (<Settings changeAppLanguage={this.props.changeAppLanguage} />)
+  }
+
   render () {
     return ([
       <nav key="tab">
@@ -26,7 +30,7 @@ class Tab extends Component {
 
       <Switch key="switch">
         <Route path={'/chat'} exact component={Chat} />
-        <Route path={'/settings'} component={Settings} />
+        <Route path={'/settings'} component={this.changeSettings}/>
         <Redirect from="/" to="/chat" />
       </Switch>
     ])

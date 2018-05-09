@@ -5,13 +5,16 @@ import ReactDOM from 'react-dom'
 import App from './pages/App/App'
 import registerServiceWorker from './registerServiceWorker'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-// import store from './pages/Settings/SettingsStore.js'
+import { Provider } from 'mobx-react'
+import SettingsStore from './pages/Settings/SettingsStore.js'
 
 const routes = (
   <BrowserRouter basename="/react-chat">
-    <Switch>
-      <Route path="/" component={App} />
-    </Switch>
+    <Provider SettingsStore={SettingsStore}>
+      <Switch>
+        <Route path="/" component={App} />
+      </Switch>
+    </Provider>
   </BrowserRouter>
 )
 

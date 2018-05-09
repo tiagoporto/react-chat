@@ -3,10 +3,19 @@ import Tab from './components/Tab/Tab'
 import logo from './logo.svg'
 import T from 'i18n-react'
 import './App.styl'
+import { observer, inject } from 'mobx-react'
 
-T.setTexts(require('../../languages/en.json'))
-
+@inject('SettingsStore')
+@observer
 class App extends Component {
+  state = {
+    appLanguage: this.props.SettingsStore.language
+  }
+
+  setLanguage = language => {
+    this.setState({appLanguage: language})
+  }
+
   render () {
     return (
       <div className="App">
@@ -15,7 +24,7 @@ class App extends Component {
           <h1>{T.translate('title')}</h1>
         </header>
 
-        <Tab></Tab>
+        <Tab changeAppLanguage={this.setLanguage}></Tab>
       </div>
     )
   }
