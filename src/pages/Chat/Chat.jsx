@@ -4,15 +4,20 @@ import T from 'i18n-react'
 
 class Chat extends Component {
   render () {
-    return (
-      <form>
-        <textarea name="" id="" cols="30" rows="10" placeholder={T.translate('chat.enter_message')}></textarea>
+    return ([
+      <div className="textarea"></div>,
 
-        <button className="button is-primary is-large">
-          {T.translate('chat.send')}
-        </button>
+      <form class="field has-addons">
+        <div class="control is-expanded">
+          <input className="input" placeholder={T.translate('chat.enter_message')} />
+        </div>
+        <div class="control">
+          <button className="button is-primary">
+            {T.translate('chat.send')}
+          </button>
+        </div>
       </form>
-    )
+    ])
   }
 }
 
