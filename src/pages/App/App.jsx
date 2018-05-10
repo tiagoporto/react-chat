@@ -18,13 +18,13 @@ class App extends Component {
 
   render () {
     return (
-      <div className="App">
+      <div className={`App App--${this.props.SettingsStore.interfaceColor}`}>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1>{T.translate('title')}</h1>
         </header>
 
-        <Tab changeAppLanguage={this.setLanguage}></Tab>
+        <Tab changeAppLanguage={this.setLanguage} location={this.props.location.pathname}></Tab>
       </div>
     )
   }

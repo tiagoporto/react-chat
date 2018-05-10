@@ -13,13 +13,13 @@ class Tab extends Component {
     return ([
       <nav key="tab">
         <ul className="tabs is-toggle is-fullwidth">
-          <li className="is-active">
+          <li className={this.props.location === '/chat' ? 'is-active' : ''}>
             <Link to={'/chat'}>
               <span className="icon is-small"><i className="fas fa-image" aria-hidden="true"></i></span>
               <span>{T.translate('chat.title')}</span>
             </Link>
           </li>
-          <li>
+          <li className={this.props.location === '/settings' ? 'is-active' : ''}>
             <Link to={'/settings'}>
               <span className="icon is-small"><i className="fas fa-music" aria-hidden="true"></i></span>
               <span>{T.translate('settings.title')}</span>
