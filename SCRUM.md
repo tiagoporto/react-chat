@@ -7,17 +7,22 @@
 - [X] Main CSS
 
 # Sprint 2 - Deadline May 9th
+- [X] HTML Chat Page
+- [X] HTML Settings Page
 - [X] I18n
 - [X] HTML Tab
 - [X] I18n Local Storage
-- [X] User name Local Storage
+- [X] Username Local Storage
 - [X] Interface color Local Storage
 - [X] Reset Local Storage
 - [X] Tabs
 
 # Sprint 3 - Deadline May 9th
-- [ ] HTML Settings Page
-- [ ] HTML Chat Page
+- [ ] Add socket.io
+- [ ] Send message
+- [ ] Receive message
+
+# Sprint 4 - Deadline May 11th
 - [ ] CSS Tab (Light)
 - [ ] CSS Tab (Dark)
 - [ ] CSS Tab (Responsive)
@@ -28,11 +33,6 @@
 - [ ] CSS Chat Page (Dark)
 - [ ] CSS Chat Page (Responsive)
 
-# Sprint 4 - Deadline May 11th
-- [ ] Add socket.io
-- [ ] Send message
-- [ ] Receive message
-
 # Sprint 5 - Deadline May 12th
 - [ ] Test
 - [ ] Docs
@@ -40,8 +40,10 @@
 - [ ] CSS Modules
 
 # Optional
+- [ ] Flow
 - [ ] Date time in chat
-- [ ] Date Local Storage
+- [ ] Clock Display Local Storage
+- [ ] Message Sound Local Storage
 - [ ] Parser links as anchor
 - [ ] Blink Tab
 - [ ] Smiles support
