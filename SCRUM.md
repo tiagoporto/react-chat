@@ -6,26 +6,27 @@
 - [X] Structure
 - [X] Main CSS
 
-# Sprint 2 - Deadline May 8th
+# Sprint 2 - Deadline May 9th
 - [X] I18n
 - [X] HTML Tab
-- [ ] CSS Tab (Light)
-- [ ] CSS Tab (Responsive)
-- [ ] HTML Settings Page
-- [ ] HTML Chat Page
-- [ ] CSS Settings Page (Light)
-- [ ] CSS Settings Page (Responsive)
-- [ ] CSS Chat Page (Light)
-- [ ] CSS Chat Page (Responsive)
+- [X] I18n Local Storage
+- [X] User name Local Storage
+- [X] Interface color Local Storage
+- [X] Reset Local Storage
+- [X] Tabs
 
 # Sprint 3 - Deadline May 9th
+- [ ] HTML Settings Page
+- [ ] HTML Chat Page
+- [ ] CSS Tab (Light)
 - [ ] CSS Tab (Dark)
-- [ ] CSS Chat Page (Dark)
+- [ ] CSS Tab (Responsive)
+- [ ] CSS Settings Page (Light)
 - [ ] CSS Settings Page (Dark)
-- [ ] I18n Local Storage
-- [ ] User name Local Storage
-- [ ] Interface color Local Storage
-- [ ] Reset Local Storage
+- [ ] CSS Settings Page (Responsive)
+- [ ] CSS Chat Page (Light)
+- [ ] CSS Chat Page (Dark)
+- [ ] CSS Chat Page (Responsive)
 
 # Sprint 4 - Deadline May 11th
 - [ ] Add socket.io
