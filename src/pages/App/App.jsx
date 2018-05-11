@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Settings from '../Settings/Settings'
-import Tab from './components/Tab/Tab'
+import Settings from '../Settings/Settings.jsx'
+import Tab from './components/Tab/Tab.jsx'
 import logo from './logo.svg'
 import T from 'i18n-react'
 import './App.styl'
 import { observer, inject } from 'mobx-react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import Chat from '../Chat/Chat'
+import Chat from '../Chat/Chat.jsx'
 
 @inject('SettingsStore')
 @observer
@@ -34,7 +34,7 @@ class App extends Component {
         </div>
       </section>,
 
-      <Tab location={this.props.location.pathname}></Tab>,
+      <Tab location={this.props.location.pathname} key="tab"></Tab>,
 
       <Switch key="switch">
         <Route path={'/chat'} exact component={Chat} />

@@ -2,7 +2,7 @@
 import './main.styl'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './pages/App/App'
+import App from './pages/App/App.jsx'
 import registerServiceWorker from './registerServiceWorker'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Provider } from 'mobx-react'
