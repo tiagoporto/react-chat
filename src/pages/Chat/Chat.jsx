@@ -6,7 +6,7 @@ import { ChatService } from './ChatService.js'
 
 @inject('ChatStore')
 @observer
-class Chat extends Component {
+export class Chat extends Component {
   componentDidUpdate = () => {
     setTimeout(() => {
       this.refs.content.scrollTop = this.refs.content.scrollHeight
@@ -67,5 +67,3 @@ class Chat extends Component {
     )
   }
 }
-
-export default Chat

@@ -5,7 +5,7 @@ import { observer, inject } from 'mobx-react'
 
 @inject('SettingsStore')
 @observer
-class Settings extends Component {
+export class Settings extends Component {
   changeLanguage = event => {
     this.props.SettingsStore.changeLanguage(event.target.value)
     this.props.changeAppLanguage(event.target.value)
@@ -96,5 +96,3 @@ class Settings extends Component {
     )
   }
 }
-
-export default Settings

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import T from 'i18n-react'
 import { Link } from 'react-router-dom'
 
-class Tab extends Component {
+export class AppTab extends Component {
   render () {
     return (
       <div className="hero-foot" key="tab">
@@ -26,5 +26,3 @@ class Tab extends Component {
     )
   }
 }
-
-export default Tab

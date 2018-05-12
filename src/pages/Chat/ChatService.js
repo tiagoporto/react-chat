@@ -1,3 +1,4 @@
+// @flow
 import { ChatStore } from './ChatStore.jsx'
 import { SettingsStore } from '../Settings/SettingsStore.js'
 import io from 'socket.io-client'

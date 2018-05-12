@@ -1,3 +1,4 @@
+// @flow
 import { observable, action } from 'mobx'
 import T from 'i18n-react'
 
