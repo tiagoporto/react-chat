@@ -7,15 +7,26 @@ import { ChatService } from './ChatService.js'
 @inject('ChatStore')
 @observer
 class Chat extends Component {
+  componentDidUpdate = () => {
+    setTimeout(() => {
+      this.refs.content.scrollTop = this.refs.content.scrollHeight
+    }, 100)
+  }
+
   sendMessage = event => {
     event.preventDefault()
 
     if (event.target.message.value) {
       ChatService.sendMessage(event.target.message.value)
       event.target.reset()
-      setTimeout(() => {
-        this.refs.content.scrollTop = this.refs.content.scrollHeight
-      }, 100)
+    }
+  }
+
+  isTyping = event => {
+    if (event.target.value) {
+      ChatService.isTyping()
+    } else {
+      ChatService.stopTyping()
     }
   }
 
@@ -31,9 +42,9 @@ class Chat extends Component {
           <ul>
             {this.props.ChatStore.messages.map((message, index) => {
               if (message.message.match(youtubeRegex)) {
-                return <li key={`message${index}`}>{message.username} - <iframe src={`https://www.youtube.com/embed/${youtubeRegex.exec(message.message)[5]}`} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe></li>
+                return <li key={`message${index}`}>{message.username} - <iframe src={`https://www.youtube.com/embed/${youtubeRegex.exec(message.message)[5]}`} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen title="Youtube video"></iframe></li>
               } else if (message.message.match(imgRegex)) {
-                return <li key={`message${index}`}>{message.username} - <img src={message.message} /></li>
+                return <li key={`message${index}`}>{message.username} - <img src={message.message} alt={`Sent by ${message.username}`}/></li>
               } else if (message.message.match(linkRegex)) {
                 return <li key={`message${index}`}>{message.username} - <a href={`${message.message}`} target="_blank" rel="noopener noreferrer">{message.message}</a></li>
               } else {
@@ -44,7 +55,7 @@ class Chat extends Component {
         </div>
         <form className="field has-addons" onSubmit={this.sendMessage}>
           <div className="control is-expanded">
-            <input className="input" name="message" placeholder={T.translate('chat.enter_message')} />
+            <input className="input" name="message" placeholder={T.translate('chat.enter_message')} onChange={this.isTyping} />
           </div>
           <div className="control">
             <button className="button is-primary">

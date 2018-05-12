@@ -47,6 +47,8 @@
 - [ ] Blink Tab
 - [ ] Smiles support
 - [ ] Unread messages count
+- [ ] User Typing
+- [ ] User joined and left message
 - [X] Parser links as anchor
 - [X] Parser Youtube link
 - [X] Parser image link

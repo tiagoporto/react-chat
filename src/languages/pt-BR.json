@@ -5,8 +5,8 @@
     "enter_message": "Digite a mensagem",
     "total_participants": {
       "0": "Nenhum usuário",
-      "1": "1 usuário logado",
-      "_": "{participants} usuário logados"
+      "1": "1 usuário ativo",
+      "_": "{participants} usuários ativos"
     }
   },
   "settings": {

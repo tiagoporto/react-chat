@@ -13,35 +13,24 @@ export class ChatService {
     })
 
     socket.on('disconnect', () => {
-      console.log('you have been disconnected')
+      console.log('You have been disconnected')
     })
 
-    socket.on('typing', data => {
-      console.log('typing', data)
-    })
+    // socket.on('typing', data => {
+    //   console.log('typing', data)
+    // })
 
-    socket.on('stop typing', data => {
-      console.log('stop typing', data)
-    })
+    // socket.on('stop typing', data => {
+    //   console.log('stop typing', data)
+    // })
 
-    socket.on('login', data => {
-      console.log('login', data)
-      ChatService.updateParticipants(data.numUsers)
-    })
+    socket.on('login', data => ChatService.updateParticipants(data.numUsers))
 
-    socket.on('user joined', data => {
-      ChatService.updateParticipants(data.numUsers)
-      console.log('joined', data)
-    })
+    socket.on('user joined', data => ChatService.updateParticipants(data.numUsers))
 
-    socket.on('user left', data => {
-      ChatService.updateParticipants(data.numUsers)
-    })
+    socket.on('user left', data => ChatService.updateParticipants(data.numUsers))
 
-    socket.on('new message', data => {
-      console.log('new message', data)
-      ChatService.receiveMessage(data)
-    })
+    socket.on('new message', data => ChatService.receiveMessage(data))
   }
 
   static sendMessage (message) {
@@ -53,7 +42,16 @@ export class ChatService {
   }
 
   static receiveMessage (message) {
+    console.log('message', message)
     ChatStore.addMessage(message)
+  }
+
+  static isTyping () {
+    socket.emit('typing')
+  }
+
+  static stopTyping () {
+    socket.emit('stop typing')
   }
 
   static addUser (username) {

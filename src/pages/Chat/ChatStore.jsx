@@ -9,15 +9,20 @@ class Chat {
   */
   @observable messages = []
   @observable participants = 0
+  @observable userTyping = []
 
   @action
   addMessage (message) {
-    console.log('message', message)
     this.messages.push(message)
   }
 
   @action
   updateParticipants (participants) {
+    this.participants = participants
+  }
+
+  @action
+  updateTyping (participants) {
     this.participants = participants
   }
 }
