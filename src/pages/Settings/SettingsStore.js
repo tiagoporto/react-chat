@@ -1,7 +1,7 @@
 import { observable, action } from 'mobx'
 import T from 'i18n-react'
 
-class SettingsStore {
+class Settings {
   defaultValues = {
     userName: `guest${Math.floor(Math.random() * Math.floor(999999))}`,
     interfaceColor: 'light',
@@ -48,8 +48,6 @@ class SettingsStore {
   }
 }
 
-const store = new SettingsStore()
+export const SettingsStore = new Settings()
 
-T.setTexts(require(`../../languages/${store.language}.json`))
-
-export default store
+T.setTexts(require(`../../languages/${SettingsStore.language}.json`))

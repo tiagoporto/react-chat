@@ -6,11 +6,11 @@ import App from './pages/App/App.jsx'
 import registerServiceWorker from './registerServiceWorker'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Provider } from 'mobx-react'
-import SettingsStore from './pages/Settings/SettingsStore.js'
+import Stores from './Stores.js'
 
 const routes = (
   <BrowserRouter basename="/react-chat">
-    <Provider SettingsStore={SettingsStore}>
+    <Provider {...Stores}>
       <Switch>
         <Route path="/" component={App} />
       </Switch>
