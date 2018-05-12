@@ -1,6 +1,5 @@
 // @flow
 import { observable, action } from 'mobx'
-import T from 'i18n-react'
 
 class Settings {
   defaultValues = {
@@ -12,19 +11,20 @@ class Settings {
     language: 'en'
   }
 
+  interfaceColorsOptions = ['light', 'dark']
+
   @observable userName = localStorage.getItem('userName') || this.defaultValues.userName
+  @observable language = localStorage.getItem('language') || this.defaultValues.language
   @observable interfaceColor = localStorage.getItem('interfaceColor') || this.defaultValues.interfaceColor
   @observable clockDisplay = 12
   @observable sounds = true
   @observable sendCTRL = false
-  @observable language = localStorage.getItem('language') || this.defaultValues.language
 
   @action
   changeLanguage (language) {
     const resetLanguage = language || this.defaultValues.language
     localStorage.setItem('language', resetLanguage)
     this.language = resetLanguage
-    T.setTexts(require(`../../languages/${resetLanguage}.json`))
   }
 
   @action
@@ -50,5 +50,3 @@ class Settings {
 }
 
 export const SettingsStore = new Settings()
-
-T.setTexts(require(`../../languages/${SettingsStore.language}.json`))

@@ -1,4 +1,5 @@
 // @flow
+import './Header.styl'
 import React, { Component } from 'react'
 import T from 'i18n-react'
 import logo from './logo.svg'

@@ -7,20 +7,22 @@ import { Settings } from '../Settings/Settings.jsx'
 import { Chat } from '../Chat/Chat.jsx'
 import { AppTab } from './components/Tab/Tab.jsx'
 import { AppHeader } from './components/Header/Header.jsx'
+import { SettingsService } from '../Settings/SettingsService.js'
 
 @inject('SettingsStore')
 @observer
 export class Main extends Component {
   state = {
-    appLanguage: this.props.SettingsStore.language
+    locale: this.props.SettingsStore.language
+  }
+  componentWillMount = () => {
+    SettingsService.setLanguage()
   }
 
   setLanguage = language => {
-    this.setState({appLanguage: language})
-  }
-
-  changeSettings = (props) => {
-    return (<Settings changeAppLanguage={this.setLanguage} />)
+    this.setState({
+      locale: language
+    })
   }
 
   render () {
@@ -33,7 +35,9 @@ export class Main extends Component {
         <main>
           <Switch key="switch">
             <Route path={'/chat'} exact component={Chat} />
-            <Route path={'/settings'} component={this.changeSettings}/>
+            <Route path={'/settings'} >
+              <Settings changeLocale={this.setLanguage} locale={this.state.locale} />
+            </Route>
             <Redirect from="/" to="/chat" />
           </Switch>
         </main>
