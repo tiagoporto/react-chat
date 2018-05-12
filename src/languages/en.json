@@ -2,7 +2,12 @@
   "chat": {
     "title": "Chat",
     "send": "Send",
-    "enter_message": "Enter message"
+    "enter_message": "Enter message",
+    "total_participants": {
+      "0": "Doesn't have any participant",
+      "1": "There is 1 participant",
+      "_": "There are {participants} participants"
+    }
   },
   "settings": {
     "title": "Settings",

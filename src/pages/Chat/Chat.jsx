@@ -1,10 +1,11 @@
 // @flow
 import React, { Component } from 'react'
 import T from 'i18n-react'
+import { observer, inject } from 'mobx-react'
 import io from 'socket.io-client'
 
 // var socket = io('http://185.13.90.140:8081/')
-var socket = io('https://socket-io-chat.now.sh/')
+const socket = io('https://socket-io-chat.now.sh/')
 
 socket.on('connect', () => {
   console.log('connect')
@@ -37,20 +38,31 @@ socket.on('user left', data => {
 socket.on('disconnect', () => {
   console.log('you have been disconnected')
 })
-
 socket.emit('add user', 'metal')
 
-socket.emit('new message', 'iuyiu')
-
+@inject('ChatStore')
+@observer
 class Chat extends Component {
+  sendMessage = event => {
+    event.preventDefault()
+    socket.emit('new message', event.target.message.value)
+    this.props.ChatStore.addMessage(event.target.message.value)
+  }
+
   render () {
     return (
       <div>
-        <div className="textarea"></div>
-
-        <form className="field has-addons">
+        <p>{T.translate('chat.total_participants', {context: this.props.ChatStore.participants, participants: this.props.ChatStore.participants})}</p>
+        <div className="textarea">
+          <ul>
+            {this.props.ChatStore.messages.map((message, index) =>
+              <li key={`message${index}`}>{index}{message.user} - {message.text}</li>
+            )}
+          </ul>
+        </div>
+        <form className="field has-addons" onSubmit={this.sendMessage}>
           <div className="control is-expanded">
-            <input className="input" placeholder={T.translate('chat.enter_message')} />
+            <input className="input" name="message" placeholder={T.translate('chat.enter_message')} />
           </div>
           <div className="control">
             <button className="button is-primary">

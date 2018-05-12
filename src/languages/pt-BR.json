@@ -2,7 +2,12 @@
   "chat": {
     "title": "Chat",
     "send": "Enviar",
-    "enter_message": "Digite a mensagem"
+    "enter_message": "Digite a mensagem",
+    "total_participants": {
+      "0": "Nenhum usuário",
+      "1": "1 usuário logado",
+      "_": "{participants} usuário logados"
+    }
   },
   "settings": {
     "title": "Configurações",
