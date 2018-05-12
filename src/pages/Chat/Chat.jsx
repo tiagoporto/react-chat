@@ -2,62 +2,44 @@
 import React, { Component } from 'react'
 import T from 'i18n-react'
 import { observer, inject } from 'mobx-react'
-import io from 'socket.io-client'
-
-// var socket = io('http://185.13.90.140:8081/')
-const socket = io('https://socket-io-chat.now.sh/')
-
-socket.on('connect', () => {
-  console.log('connect')
-})
-
-socket.on('new message', data => {
-  console.log('mensagem', data)
-})
-
-socket.on('typing', data => {
-  console.log('typing', data)
-})
-
-socket.on('stop typing', data => {
-  console.log('stop typing', data)
-})
-
-socket.on('login', data => {
-  console.log('login', data)
-})
-
-socket.on('user joined', data => {
-  console.log('join', data)
-})
-
-socket.on('user left', data => {
-  console.log('left', data)
-})
-
-socket.on('disconnect', () => {
-  console.log('you have been disconnected')
-})
-socket.emit('add user', 'metal')
+import { ChatService } from './ChatService.js'
 
 @inject('ChatStore')
 @observer
 class Chat extends Component {
   sendMessage = event => {
     event.preventDefault()
-    socket.emit('new message', event.target.message.value)
-    this.props.ChatStore.addMessage(event.target.message.value)
+
+    if (event.target.message.value) {
+      ChatService.sendMessage(event.target.message.value)
+      event.target.reset()
+      setTimeout(() => {
+        this.refs.content.scrollTop = this.refs.content.scrollHeight
+      }, 100)
+    }
   }
 
   render () {
+    const linkRegex = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})/
+    const youtubeRegex = /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/
+    const imgRegex = /(?:([^:/?#]+):)?(?:\/\/([^/?#]*))?([^?#]*\.(?:jpg|jpeg|gif|png|svg))(?:\?([^#]*))?(?:#(.*))?/
+
     return (
       <div>
         <p>{T.translate('chat.total_participants', {context: this.props.ChatStore.participants, participants: this.props.ChatStore.participants})}</p>
-        <div className="textarea">
+        <div style={{overflow: 'scroll', maxHeight: '300px'}} ref='content'>
           <ul>
-            {this.props.ChatStore.messages.map((message, index) =>
-              <li key={`message${index}`}>{index}{message.user} - {message.text}</li>
-            )}
+            {this.props.ChatStore.messages.map((message, index) => {
+              if (message.message.match(youtubeRegex)) {
+                return <li key={`message${index}`}>{message.username} - <iframe src={`https://www.youtube.com/embed/${youtubeRegex.exec(message.message)[5]}`} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe></li>
+              } else if (message.message.match(imgRegex)) {
+                return <li key={`message${index}`}>{message.username} - <img src={message.message} /></li>
+              } else if (message.message.match(linkRegex)) {
+                return <li key={`message${index}`}>{message.username} - <a href={`${message.message}`} target="_blank" rel="noopener noreferrer">{message.message}</a></li>
+              } else {
+                return <li key={`message${index}`}><p>{message.username} - {message.message}</p></li>
+              }
+            })}
           </ul>
         </div>
         <form className="field has-addons" onSubmit={this.sendMessage}>

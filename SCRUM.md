@@ -18,9 +18,9 @@
 - [X] Tabs
 
 # Sprint 3 - Deadline May 9th
-- [ ] Add socket.io
-- [ ] Send message
-- [ ] Receive message
+- [X] Add socket.io
+- [X] Send message
+- [X] Receive message
 
 # Sprint 4 - Deadline May 11th
 - [ ] CSS Tab (Light)
@@ -44,10 +44,10 @@
 - [ ] Date time in chat
 - [ ] Clock Display Local Storage
 - [ ] Message Sound Local Storage
-- [ ] Parser links as anchor
 - [ ] Blink Tab
 - [ ] Smiles support
 - [ ] Unread messages count
-- [ ] Parser Youtube link
-- [ ] Link to an image
+- [X] Parser links as anchor
+- [X] Parser Youtube link
+- [X] Parser image link
 
