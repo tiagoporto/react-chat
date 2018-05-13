@@ -1,4 +1,5 @@
 // @flow
+import './App.styl'
 import React, { Component } from 'react'
 import { Provider } from 'mobx-react'
 import { HashRouter, Route, Switch } from 'react-router-dom'

@@ -10,13 +10,13 @@ export class AppTab extends Component {
       <nav className="tabs">
         <ul className="tabs__list">
           <li className={`tabs__item ${this.props.location === '/chat' ? 'tabs__item--active' : ''}`}>
-            <Link to={'/chat'}>
+            <Link to={'/chat'} className="tabs__link">
               <span>{T.translate('chat.title')}</span>
             </Link>
           </li>
 
           <li className={`tabs__item ${this.props.location === '/settings' ? 'tabs__item--active' : ''}`}>
-            <Link to={'/settings'}>
+            <Link to={'/settings'} className="tabs__link">
               <span>
                 {T.translate('settings.title')}
               </span>

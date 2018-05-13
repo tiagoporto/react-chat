@@ -27,7 +27,7 @@ export class Main extends Component {
 
   render () {
     return (
-      <div className={`App App--${this.props.SettingsStore.interfaceColor}`}>
+      <div className={`app app--${this.props.SettingsStore.interfaceColor}`}>
         <AppHeader />
 
         <AppTab location={this.props.location.pathname} key="tab" />
