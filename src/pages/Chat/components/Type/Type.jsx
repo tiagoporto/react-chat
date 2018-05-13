@@ -21,6 +21,7 @@ export class Type extends Component {
         name="message"
         placeholder={T.translate('chat.enter_message')}
         onChange={this.isTyping}
+        autoFocus
       />
     )
   }

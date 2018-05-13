@@ -12,28 +12,36 @@ export class Messages extends Component {
   }
 
   parseMessage = item => {
+    const message = item.message
+
     const pattern = {
       link: /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})/,
       youtube: /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w-]+\?v=|embed\/|v\/)?)([\w-]+)(\S+)?$/,
       image: /(?:([^:/?#]+):)?(?:\/\/([^/?#]*))?([^?#]*\.(?:jpg|jpeg|gif|png|svg))(?:\?([^#]*))?(?:#(.*))?/
     }
 
-    if (item.message.match(pattern.youtube)) {
+    if (message.match(pattern.youtube)) {
       return (
         <iframe
-          src={`https://www.youtube.com/embed/${pattern.youtube.exec(item.message)[5]}`}
+          src={`https://www.youtube.com/embed/${pattern.youtube.exec(message)[5]}`}
           frameBorder="0"
           allow="autoplay; encrypted-media"
           allowFullScreen title="Youtube video"
         >
         </iframe>
       )
-    } else if (item.message.match(pattern.image)) {
-      return <img src={item.message} alt={`Sent by ${item.username}`}/>
-    } else if (item.message.match(pattern.link)) {
-      return <a href={`${item.message}`} target="_blank" rel="noopener noreferrer">{item.message}</a>
+    } else if (message.match(pattern.image)) {
+      return (
+        <a href="{item.message}" target="_blank" rel="noopener noreferrer">
+          <img src={message} alt={`Sent by ${item.username}`} height="200"/>
+        </a>
+      )
+    } else if (message.match(pattern.link)) {
+      return (
+        <a href={`${message}`} target="_blank" rel="noopener noreferrer">{message}</a>
+      )
     } else {
-      return item.message
+      return message
     }
   }
 

@@ -3,11 +3,14 @@
     "title": "Chat",
     "send": "Envoyer",
     "enter_message": "Saisissez le message",
+    "is_typing": "{username} est en train de taper",
     "total_participants": {
       "0": "Il n'y a aucun participant",
       "1": "il y a 1 participant",
       "_": "il y a {participants} participants"
-    }
+    },
+    "online": "Online",
+    "offline": "Offline"
   },
   "settings": {
     "title": "Paramètres",

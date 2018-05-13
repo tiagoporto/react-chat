@@ -9,33 +9,21 @@ export class ChatService {
   static init () {
     this.addUser()
 
-    socket.on('connect', () => {
-      console.log('connect')
-    })
-
-    socket.on('disconnect', () => {
-      console.log('You have been disconnected')
-    })
-
-    // socket.on('typing', data => {
-    //   console.log('typing', data)
-    // })
-
-    // socket.on('stop typing', data => {
-    //   console.log('stop typing', data)
-    // })
-
-    socket.on('login', data => ChatService.updateParticipants(data.numUsers))
-
-    socket.on('user joined', data => ChatService.updateParticipants(data.numUsers))
-
-    socket.on('user left', data => ChatService.updateParticipants(data.numUsers))
-
-    socket.on('new message', data => ChatService.receiveMessage(data))
+    socket
+      .on('connect', () => ChatStore.setStatus(true))
+      .on('disconnect', () => ChatStore.setStatus(false))
+      .on('typing', data => ChatStore.updateUserTyping(data.username))
+      .on('stop typing', data => ChatStore.updateUserTyping())
+      .on('login', data => ChatService.updateParticipants(data.numUsers))
+      .on('user joined', data => ChatService.updateParticipants(data.numUsers))
+      .on('user left', data => ChatService.updateParticipants(data.numUsers))
+      .on('new message', data => ChatService.receiveMessage(data))
   }
 
   static sendMessage (message: string) {
+    // There is a problem in callback
     socket.emit('new message', message)
+
     ChatStore.addMessage({
       username: SettingsStore.userName,
       message: message,
@@ -44,8 +32,7 @@ export class ChatService {
     })
   }
 
-  static receiveMessage (message: { [key:any]: string }) {
-    console.log('message', message)
+  static receiveMessage (message: { [key:string]: string }) {
     ChatStore.addMessage({
       ...message,
       time: new Date()

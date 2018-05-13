@@ -23,16 +23,28 @@ export class Chat extends Component {
 
   render () {
     return ([
-      <p key="participants">
-        {
-          T.translate('chat.total_participants', {
-            context: this.props.ChatStore.participants,
-            participants: this.props.ChatStore.participants
+      <div key="participants">
+        <p>
+          {
+            T.translate('chat.total_participants', {
+              context: this.props.ChatStore.participants,
+              participants: this.props.ChatStore.participants
+            })
+          }
+        </p>
+
+        <p>{this.props.ChatStore.status ? T.translate('chat.online') : T.translate('chat.offline')}</p>
+      </div>,
+
+      <Messages key="messages" />,
+
+      <p key="typing">
+        {this.props.ChatStore.userTyping &&
+          T.translate('chat.is_typing', {
+            username: this.props.ChatStore.userTyping
           })
         }
       </p>,
-
-      <Messages key="messages" />,
 
       <form
         className="field has-addons"
