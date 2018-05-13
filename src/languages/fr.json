@@ -4,9 +4,9 @@
     "send": "Envoyer",
     "enter_message": "Saisissez le message",
     "total_participants": {
-      "0": "Doesn't have any participant",
-      "1": "There is 1 participant",
-      "_": "There are {participants} participants"
+      "0": "Il n'y a aucun participant",
+      "1": "il y a 1 participant",
+      "_": "il y a {participants} participants"
     }
   },
   "settings": {
