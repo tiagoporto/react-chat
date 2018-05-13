@@ -25,32 +25,11 @@ export class Settings extends Component {
     return (
       <form>
         <fieldset>
-          <p>
-            <label>
-              {T.translate('settings.user_name')}
-              <Username />
-            </label>
-          </p>
+          <Username />
 
-          <p>
-            {T.translate('settings.interface_color')}
-          </p>
+          <Color locale={this.props.locale}/>
 
-          <div className="control">
-            <Color />
-          </div>
-
-          <div className="field">
-            <label className="label">
-              {T.translate('settings.language')}
-            </label>
-
-            <div className="control">
-              <div className="select">
-                <Language changeLocale={this.props.changeLocale}/>
-              </div>
-            </div>
-          </div>
+          <Language changeLocale={this.props.changeLocale}/>
 
           <button
             className="button is-large is-primary is-fullwidth"

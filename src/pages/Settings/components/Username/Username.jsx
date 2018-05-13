@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react'
+import T from 'i18n-react'
 import { observer, inject } from 'mobx-react'
 
 @inject('SettingsStore')
@@ -11,14 +12,19 @@ export class Username extends Component {
 
   render () {
     return (
-      <input
-        type="text"
-        ref="inputUserName"
-        className="input"
-        placeholder={this.props.SettingsStore.userName}
-        defaultValue={this.props.SettingsStore.userName}
-        onChange={this.changeUserName}
-      />
+      <p>
+        <label>
+          {T.translate('settings.user_name')}
+          <input
+            type="text"
+            ref="inputUserName"
+            className="input"
+            placeholder={this.props.SettingsStore.userName}
+            defaultValue={this.props.SettingsStore.userName}
+            onChange={this.changeUserName}
+          />
+        </label>
+      </p>
     )
   }
 }

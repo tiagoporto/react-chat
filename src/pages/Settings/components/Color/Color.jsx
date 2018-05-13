@@ -11,19 +11,25 @@ export class Color extends Component {
   }
 
   render () {
-    return this.props.SettingsStore.interfaceColorsOptions.map((color, index) => {
-      return (
-        <label className="radio" key={index}>
-          <input
-            type="radio"
-            name="interface"
-            value={color}
-            checked={this.props.SettingsStore.interfaceColor === color}
-            onChange={this.changeInterfaceColor}
-          />
-          {T.translate(`settings.interface_${color}`)}
-        </label>
-      )
-    })
+    return ([
+      <p key="label">{T.translate('settings.interface_color')}</p>,
+
+      <div className="control" key="select">
+        {this.props.SettingsStore.interfaceColorsOptions.map((color, index) => {
+          return (
+            <label className="radio" key={index}>
+              <input
+                type="radio"
+                name="interface"
+                value={color}
+                checked={this.props.SettingsStore.interfaceColor === color}
+                onChange={this.changeInterfaceColor}
+              />
+              {T.translate(`settings.interface_${color}`)}
+            </label>
+          )
+        })}
+      </div>
+    ])
   }
 }
