@@ -11,7 +11,7 @@ Uses
   - eslint-config-react-app
   - eslint-config-standard
 - Stylus
-- Bulma-stylus
+- Normalize.css
 
 
 Below you will find some information on how to perform common tasks.<br>

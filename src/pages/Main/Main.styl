@@ -1,28 +1,21 @@
-// Import a Google Font
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700')
 
-// Set your brand colors
-$purple = #8A4D76
-$pink = #FA7C91
-$brown = #757763
-$beige-light = #D0D1CD
-$beige-lighter = #EFF0EB
+// Normalize styles
+@import "normalize.css/normalize.css"
 
-// Update Bulma's global variables
-$family-sans-serif = "Nunito", serif
-// $grey-dark = $brown
-// $grey-light = $beige-light
-// $primary = $purple
-// $link = $pink
+// Import settings
+@import '../../stylesheet/_settings.styl'
 
-// Update some of Bulma's component variables
-$control-border-width = 2px
-$input-background-color = $beige-lighter
-$input-border-color = transparent
-$input-shadow = none
+body
+  font: normal normal  $base-font-size\/rem($base-line-height) $font-family-base
+  background-color: $bg-color
+  color: $base-text-color
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  font-smoothing: auto
+  font-feature-settings: "liga", "kern"
 
-// @import "bulma-stylus/stylus/base/minireset"
-// @import "bulma-stylus/stylus/base/generic"
-
-// Import the rest of Bulma
-@import "bulma-stylus/bulma"
+.main
+  margin: auto
+  max-width: 1000px

@@ -22,20 +22,23 @@ export class Chat extends Component {
   render () {
     return (
       <div>
-        <p>{T.translate('chat.total_participants', {context: this.props.ChatStore.participants, participants: this.props.ChatStore.participants})}</p>
+        <p>
+          {
+            T.translate('chat.total_participants', {
+              context: this.props.ChatStore.participants,
+              participants: this.props.ChatStore.participants
+            })
+          }
+        </p>
 
         <Messages />
 
         <form className="field has-addons" onSubmit={this.sendMessage}>
-          <div className="control is-expanded">
-            <Type />
-          </div>
+          <Type />
 
-          <div className="control">
-            <button type="submit" className="button is-primary">
-              {T.translate('chat.send')}
-            </button>
-          </div>
+          <button type="submit" className="button is-primary">
+            {T.translate('chat.send')}
+          </button>
         </form>
       </div>
     )

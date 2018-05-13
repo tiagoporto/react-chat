@@ -32,7 +32,7 @@ export class Main extends Component {
 
         <AppTab location={this.props.location.pathname} key="tab" />
 
-        <main>
+        <main className="main">
           <Switch key="switch">
             <Route path={'/chat'} exact component={Chat} />
             <Route path={'/settings'} >

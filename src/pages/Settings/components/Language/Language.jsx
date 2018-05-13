@@ -14,24 +14,20 @@ export class Language extends Component {
 
   render () {
     return (
-      <div className="field">
+      <p>
         <label className="label">
           {T.translate('settings.language')}
-        </label>
 
-        <div className="control">
-          <div className="select">
-            <select
-              onChange={this.changeLanguage}
-              value={this.props.SettingsStore.language}
-            >
-              <option value="en">{T.translate('languages.en')}</option>
-              <option value="pt-BR">{T.translate('languages.pt-BR')}</option>
-              <option value="fr">{T.translate('languages.fr')}</option>
-            </select>
-          </div>
-        </div>
-      </div>
+          <select
+            onChange={this.changeLanguage}
+            value={this.props.SettingsStore.language}
+          >
+            <option value="en">{T.translate('languages.en')}</option>
+            <option value="pt-BR">{T.translate('languages.pt-BR')}</option>
+            <option value="fr">{T.translate('languages.fr')}</option>
+          </select>
+        </label>
+      </p>
     )
   }
 }

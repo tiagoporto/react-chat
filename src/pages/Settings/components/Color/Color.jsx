@@ -14,7 +14,7 @@ export class Color extends Component {
     return ([
       <p key="label">{T.translate('settings.interface_color')}</p>,
 
-      <div className="control" key="select">
+      <p key="select">
         {this.props.SettingsStore.interfaceColorsOptions.map((color, index) => {
           return (
             <label className="radio" key={index}>
@@ -29,7 +29,7 @@ export class Color extends Component {
             </label>
           )
         })}
-      </div>
+      </p>
     ])
   }
 }
