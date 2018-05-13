@@ -1,3 +1,4 @@
+import './Messages.styl'
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
 
@@ -38,16 +39,17 @@ export class Messages extends Component {
 
   render () {
     return (
-      <div ref='content'>
-        <ul>
+      <div className="messages-box" ref='content'>
+        <ul className="messages-box__list">
           {
             this.props.ChatStore.messages.map((item, index) => {
               return (
-                <li key={`message${index}`}>
-                  <p style={item.mine && {textAlign: 'right'}}>
+                <li className="messages-box__item" key={`message${index}`}>
+                  <p className={item.mine && 'message--mine'}>
                     {item.time.toLocaleTimeString()}
-                    <span>
-                      {item.mine || `, ${item.username}`} {this.parseMessage(item)}
+                    {item.mine || `, ${item.username}`}<br/>
+                    <span className="message">
+                      {this.parseMessage(item)}
                     </span>
                   </p>
                 </li>
