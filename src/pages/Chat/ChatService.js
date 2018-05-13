@@ -38,13 +38,18 @@ export class ChatService {
     socket.emit('new message', message)
     ChatStore.addMessage({
       username: SettingsStore.userName,
-      message: message
+      message: message,
+      time: new Date(),
+      mine: true
     })
   }
 
   static receiveMessage (message: { [key:any]: string }) {
     console.log('message', message)
-    ChatStore.addMessage(message)
+    ChatStore.addMessage({
+      ...message,
+      time: new Date()
+    })
   }
 
   static isTyping () {

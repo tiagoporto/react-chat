@@ -32,7 +32,7 @@ export class Messages extends Component {
     } else if (item.message.match(pattern.link)) {
       return <a href={`${item.message}`} target="_blank" rel="noopener noreferrer">{item.message}</a>
     } else {
-      return <p>{item.username} - {item.message}</p>
+      return item.message
     }
   }
 
@@ -42,7 +42,16 @@ export class Messages extends Component {
         <ul>
           {
             this.props.ChatStore.messages.map((item, index) => {
-              return <li key={`message${index}`}>{this.parseMessage(item)}</li>
+              return (
+                <li key={`message${index}`}>
+                  <p style={item.mine && {textAlign: 'right'}}>
+                    {item.time.toLocaleTimeString()}
+                    <span>
+                      {item.mine || `, ${item.username}`} {this.parseMessage(item)}
+                    </span>
+                  </p>
+                </li>
+              )
             })
           }
         </ul>
