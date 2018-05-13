@@ -34,7 +34,7 @@ export class ChatService {
     socket.on('new message', data => ChatService.receiveMessage(data))
   }
 
-  static sendMessage (message) {
+  static sendMessage (message: string) {
     socket.emit('new message', message)
     ChatStore.addMessage({
       username: SettingsStore.userName,
@@ -42,7 +42,7 @@ export class ChatService {
     })
   }
 
-  static receiveMessage (message) {
+  static receiveMessage (message: { [key:any]: string }) {
     console.log('message', message)
     ChatStore.addMessage(message)
   }
@@ -55,11 +55,11 @@ export class ChatService {
     socket.emit('stop typing')
   }
 
-  static addUser (username) {
+  static addUser (username: ?string) {
     socket.emit('add user', SettingsStore.userName)
   }
 
-  static updateParticipants (totalParticipants) {
+  static updateParticipants (totalParticipants: number) {
     ChatStore.updateParticipants(totalParticipants)
   }
 }

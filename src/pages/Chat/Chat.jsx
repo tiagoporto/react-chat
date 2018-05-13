@@ -1,4 +1,3 @@
-// @flow
 import React, { Component } from 'react'
 import T from 'i18n-react'
 import { observer, inject } from 'mobx-react'
@@ -9,13 +8,16 @@ import { Type } from './components/Type/Type.jsx'
 @inject('ChatStore')
 @observer
 export class Chat extends Component {
+  static defaultProps = {
+    ChatStore: null
+  }
+
   sendMessage = event => {
     event.preventDefault()
 
-    if (event.target.message.value) {
-      console.log('event.target.message.value', event.target.message.value)
-      ChatService.sendMessage(event.target.message.value)
-      event.target.reset()
+    if (event.currentTarget.message.value) {
+      ChatService.sendMessage(event.currentTarget.message.value)
+      event.currentTarget.reset()
     }
   }
 

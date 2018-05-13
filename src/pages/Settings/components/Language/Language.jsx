@@ -1,4 +1,3 @@
-// @flow
 import React, { Component } from 'react'
 import T from 'i18n-react'
 import { observer, inject } from 'mobx-react'
@@ -8,8 +7,8 @@ import { SettingsService } from '../../SettingsService.js'
 @observer
 export class Language extends Component {
   changeLanguage = event => {
-    SettingsService.changeLanguage(event.target.value)
-    this.props.changeLocale(event.target.value)
+    SettingsService.setLanguage(event.currentTarget.value)
+    this.props.changeLocale(event.currentTarget.value)
   }
 
   render () {

@@ -1,4 +1,3 @@
-// @flow
 import './Main.styl'
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
@@ -17,6 +16,7 @@ export class Main extends Component {
   }
   componentWillMount = () => {
     SettingsService.setLanguage()
+    SettingsService.setColor()
   }
 
   setLanguage = language => {
@@ -26,22 +26,20 @@ export class Main extends Component {
   }
 
   render () {
-    return (
-      <div className={`app app--${this.props.SettingsStore.interfaceColor}`}>
-        <AppHeader />
+    return ([
+      <AppHeader key="header" />,
 
-        <AppTab location={this.props.location.pathname} key="tab" />
+      <AppTab location={this.props.location.pathname} key="tab" />,
 
-        <main className="main">
-          <Switch key="switch">
-            <Route path={'/chat'} exact component={Chat} />
-            <Route path={'/settings'} >
-              <Settings changeLocale={this.setLanguage} locale={this.state.locale} />
-            </Route>
-            <Redirect from="/" to="/chat" />
-          </Switch>
-        </main>
-      </div>
-    )
+      <main className="main" key="main">
+        <Switch >
+          <Route path={'/chat'} exact component={Chat} />
+          <Route path={'/settings'} >
+            <Settings changeLocale={this.setLanguage} locale={this.state.locale} />
+          </Route>
+          <Redirect from="/" to="/chat" />
+        </Switch>
+      </main>
+    ])
   }
 }

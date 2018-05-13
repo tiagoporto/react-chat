@@ -17,3 +17,29 @@
   &__link
     display: inline-block
     width: 100%
+    text-decoration: none
+    color: #FFF
+    padding: 1rem 0
+    background: $primary-color
+
+    .app--dark &
+      background: $primary-color-dark
+
+    &:hover
+      background: darken($primary-color, 8%)
+
+      .app--dark &
+        background: darken($primary-color-dark, 8%)
+
+    &--active
+      background: #2980b9
+
+      &:hover
+        background: #2980b9
+
+      .app--dark &
+        background: #2c3e50
+
+        &:hover
+          background: #2c3e50
+

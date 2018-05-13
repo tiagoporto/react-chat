@@ -23,9 +23,9 @@
 - [X] Receive message
 
 # Sprint 4 - Deadline May 11th
-- [ ] CSS Tab (Light)
-- [ ] CSS Tab (Dark)
-- [ ] CSS Tab (Responsive)
+- [X] CSS Tab (Light)
+- [X] CSS Tab (Dark)
+- [X] CSS Tab (Responsive)
 - [ ] CSS Settings Page (Light)
 - [ ] CSS Settings Page (Dark)
 - [ ] CSS Settings Page (Responsive)
@@ -40,7 +40,7 @@
 - [ ] CSS Modules
 
 # Optional
-- [ ] Flow
+- [X] Flow
 - [ ] Date time in chat
 - [ ] Clock Display Local Storage
 - [ ] Message Sound Local Storage

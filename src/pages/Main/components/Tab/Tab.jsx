@@ -1,4 +1,3 @@
-// @flow
 import './Tab.styl'
 import React, { Component } from 'react'
 import T from 'i18n-react'
@@ -9,14 +8,14 @@ export class AppTab extends Component {
     return (
       <nav className="tabs">
         <ul className="tabs__list">
-          <li className={`tabs__item ${this.props.location === '/chat' ? 'tabs__item--active' : ''}`}>
-            <Link to={'/chat'} className="tabs__link">
+          <li className="tabs__item">
+            <Link to={'/chat'} className={`tabs__link ${this.props.location === '/chat' ? 'tabs__link--active' : ''}`}>
               <span>{T.translate('chat.title')}</span>
             </Link>
           </li>
 
-          <li className={`tabs__item ${this.props.location === '/settings' ? 'tabs__item--active' : ''}`}>
-            <Link to={'/settings'} className="tabs__link">
+          <li className="tabs__item">
+            <Link to={'/settings'} className={`tabs__link ${this.props.location === '/settings' ? 'tabs__link--active' : ''}`}>
               <span>
                 {T.translate('settings.title')}
               </span>

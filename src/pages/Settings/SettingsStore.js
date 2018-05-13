@@ -21,21 +21,21 @@ class Settings {
   @observable sendCTRL = false
 
   @action
-  changeLanguage (language) {
+  setLanguage (language: ?string) {
     const resetLanguage = language || this.defaultValues.language
     localStorage.setItem('language', resetLanguage)
     this.language = resetLanguage
   }
 
   @action
-  changeInterfaceColor (color) {
+  setInterfaceColor (color: ?string) {
     const resetColor = color || this.defaultValues.interfaceColor
     localStorage.setItem('interfaceColor', resetColor)
     this.interfaceColor = resetColor
   }
 
   @action
-  changeUserName (name) {
+  setUsername (name: ?string) {
     const resetName = name || this.defaultValues.userName
     localStorage.setItem('userName', resetName)
     this.userName = resetName
@@ -43,9 +43,9 @@ class Settings {
 
   @action
   resetDefault () {
-    this.changeLanguage()
-    this.changeInterfaceColor()
-    this.changeUserName()
+    this.setLanguage()
+    this.setInterfaceColor()
+    this.setUsername()
   }
 }
 

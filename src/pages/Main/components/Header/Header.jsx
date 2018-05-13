@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import T from 'i18n-react'
 import logo from './logo.svg'
 
-export class AppHeader extends Component {
+export class AppHeader extends Component<{}> {
   render () {
     return (
       <header className="header" key="section">

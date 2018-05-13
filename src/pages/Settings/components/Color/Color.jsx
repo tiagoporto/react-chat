@@ -1,13 +1,13 @@
-// @flow
 import React, { Component } from 'react'
 import T from 'i18n-react'
 import { observer, inject } from 'mobx-react'
+import { SettingsService } from '../../SettingsService.js'
 
 @inject('SettingsStore')
 @observer
 export class Color extends Component {
   changeInterfaceColor = event => {
-    this.props.SettingsStore.changeInterfaceColor(event.target.value)
+    SettingsService.setColor(event.currentTarget.value)
   }
 
   render () {

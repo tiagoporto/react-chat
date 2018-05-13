@@ -1,4 +1,3 @@
-// @flow
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
 import { ChatService } from '../../ChatService.js'
@@ -8,7 +7,7 @@ import T from 'i18n-react'
 @observer
 export class Type extends Component {
   isTyping = event => {
-    if (event.target.value) {
+    if (event.currentTarget.value) {
       ChatService.isTyping()
     } else {
       ChatService.stopTyping()

@@ -13,17 +13,17 @@ class Chat {
   @observable userTyping = []
 
   @action
-  addMessage (message) {
+  addMessage (message: { [key:any]: string }) {
     this.messages.push(message)
   }
 
   @action
-  updateParticipants (participants) {
+  updateParticipants (participants: number) {
     this.participants = participants
   }
 
   @action
-  updateTyping (participants) {
+  updateTyping (participants: number) {
     this.participants = participants
   }
 }

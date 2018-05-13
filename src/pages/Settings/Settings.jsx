@@ -1,4 +1,3 @@
-// @flow
 import React, { Component } from 'react'
 import T from 'i18n-react'
 import { observer, inject } from 'mobx-react'
@@ -11,7 +10,7 @@ import { SettingsService } from './SettingsService.js'
 @observer
 export class Settings extends Component {
   changeUserName = event => {
-    SettingsService(event.target.value)
+    SettingsService(event.currentTarget.value)
   }
 
   resetDefault = event => {

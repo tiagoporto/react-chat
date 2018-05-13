@@ -12,5 +12,6 @@ module.file_ext=.jsx
 module.file_ext=.json
 module.file_ext=.styl
 module.name_mapper.extension='styl' -> 'empty/object'
+esproposal.decorators=ignore
 
 [strict]
