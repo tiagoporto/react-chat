@@ -8,7 +8,7 @@ import Stores from './Stores.js'
 export class App extends Component {
   render () {
     return (
-      <HashRouter basename="/react-chat">
+      <HashRouter basename="/">
         <Provider {...Stores}>
           <Switch>
             <Route path="/" component={Main} />
