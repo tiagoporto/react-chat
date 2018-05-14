@@ -3,7 +3,7 @@
     "title": "Chat",
     "send": "Send",
     "enter_message": "Enter message",
-    "is_typing": "{username} is typing",
+    "is_typing": "*{username}* is typing",
     "total_participants": {
       "0": "Doesn't have any participant",
       "1": "There is 1 participant",

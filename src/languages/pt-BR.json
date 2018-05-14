@@ -3,7 +3,7 @@
     "title": "Chat",
     "send": "Enviar",
     "enter_message": "Digite a mensagem",
-    "is_typing": "{username} está digitando",
+    "is_typing": "*{username}* está digitando",
     "total_participants": {
       "0": "Nenhum usuário",
       "1": "1 usuário ativo",

@@ -1,3 +1,4 @@
+import './Chat.styl'
 import React, { Component } from 'react'
 import T from 'i18n-react'
 import { observer, inject } from 'mobx-react'
@@ -13,8 +14,11 @@ export class Chat extends Component {
 
   render () {
     return ([
-      <div key="participants">
-        <p>
+      <div
+        className="info-bar"
+        key="participants"
+      >
+        <p className="info-bar__participants">
           {
             T.translate('chat.total_participants', {
               context: this.props.ChatStore.participants,
@@ -23,20 +27,25 @@ export class Chat extends Component {
           }
         </p>
 
-        <p>{this.props.ChatStore.status ? T.translate('chat.online') : T.translate('chat.offline')}</p>
+        <p className={`info-bar__status ${this.props.ChatStore.status ? 'info-bar__status--on' : 'info-bar__status--off'}`}>
+          {this.props.ChatStore.status ? T.translate('chat.online') : T.translate('chat.offline')}
+        </p>
       </div>,
 
       <Messages key="messages" />,
 
-      <p key="typing">
-        {this.props.ChatStore.userTyping &&
-          T.translate('chat.is_typing', {
-            username: this.props.ChatStore.userTyping
-          })
-        }
-      </p>,
+      <div key="typing">
+        <p className="typing">
+          {this.props.ChatStore.userTyping &&
+            T.translate('chat.is_typing', {
+              username: this.props.ChatStore.userTyping
+            })
+          }
+        </p>
 
-      <Type key="form" />
+        <Type />
+      </div>
+
     ])
   }
 }
