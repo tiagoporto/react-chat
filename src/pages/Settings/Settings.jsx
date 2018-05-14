@@ -1,3 +1,4 @@
+import './Settings.styl'
 import React, { Component } from 'react'
 import T from 'i18n-react'
 import { observer, inject } from 'mobx-react'
@@ -10,6 +11,8 @@ import { SettingsService } from './SettingsService.js'
 @inject('SettingsStore')
 @observer
 export class Settings extends Component {
+  inputUsername = React.createRef()
+
   changeUserName = event => {
     SettingsService(event.currentTarget.value)
   }
@@ -18,14 +21,14 @@ export class Settings extends Component {
     event.preventDefault()
     this.props.SettingsStore.resetDefault()
     this.props.changeLocale(this.props.SettingsStore.language)
-    this.refs.inputUserName.value = this.props.SettingsStore.username
+    this.inputUsername.value = this.props.SettingsStore.username
   }
 
   render () {
     return (
-      <form>
+      <form className="settings__form">
         <fieldset>
-          <Username />
+          <Username username={input => (this.inputUsername = input)}/>
 
           <Color locale={this.props.locale}/>
 
@@ -34,7 +37,7 @@ export class Settings extends Component {
           <Language changeLocale={this.props.changeLocale}/>
 
           <button
-            className="button is-large is-primary is-fullwidth"
+            className="settings__button"
             onClick={this.resetDefault}
           >
             {T.translate('settings.reset')}

@@ -13,10 +13,10 @@ export class Username extends Component<{}> {
     return (
       <p>
         <label>
-          {T.translate('settings.user_name')}
+          <span>{T.translate('settings.user_name')}</span>
           <input
             type="text"
-            ref="inputUserName"
+            ref={this.props.username}
             className="input"
             placeholder={this.props.SettingsStore.username}
             defaultValue={this.props.SettingsStore.username}

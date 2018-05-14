@@ -1,0 +1,33 @@
+@import '../../stylesheet/_settings.styl'
+
+.settings__form
+  fieldset
+    border: none
+    padding: 1rem
+
+  label,
+  .label
+    span
+      font-weight: bold
+      display: block
+
+  .radio
+    padding-right: 1rem
+    input
+      margin-right: .3rem
+
+.settings__button
+  background: $primary-color
+  border: none
+  color: #FFF
+  padding: 1rem
+  cursor: pointer
+
+  &:hover
+    background: darken($primary-color, 10%)
+
+  .app--dark &
+    background: $primary-color-dark
+
+    &:hover
+        background: darken($primary-color-dark, 40%)

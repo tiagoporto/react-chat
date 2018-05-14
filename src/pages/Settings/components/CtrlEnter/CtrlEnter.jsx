@@ -10,10 +10,10 @@ export class CtrlEnter extends Component {
   }
 
   render () {
-    return ([
-      <p key="label">{T.translate('settings.send_ctrl')}</p>,
+    return (
 
-      <p key="select">
+      <p className="label">
+        <span>{T.translate('settings.send_ctrl')}</span>
         {[true, false].map((state, index) => {
           return (
             <label className="radio" key={index}>
@@ -29,6 +29,6 @@ export class CtrlEnter extends Component {
           )
         })}
       </p>
-    ])
+    )
   }
 }

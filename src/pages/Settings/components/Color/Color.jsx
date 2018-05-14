@@ -11,10 +11,9 @@ export class Color extends Component {
   }
 
   render () {
-    return ([
-      <p key="label">{T.translate('settings.interface_color')}</p>,
-
-      <p key="select">
+    return (
+      <p className="label">
+        <span>{T.translate('settings.interface_color')}</span>
         {this.props.SettingsStore.interfaceColorsOptions.map((color, index) => {
           return (
             <label className="radio" key={index}>
@@ -30,6 +29,6 @@ export class Color extends Component {
           )
         })}
       </p>
-    ])
+    )
   }
 }

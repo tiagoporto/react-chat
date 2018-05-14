@@ -15,7 +15,7 @@ export class Language extends Component {
     return (
       <p>
         <label className="label">
-          {T.translate('settings.language')}
+          <span>{T.translate('settings.language')}</span>
 
           <select
             onChange={this.changeLanguage}
