@@ -11,16 +11,17 @@
 ## Features
 - Send/Receive Messages
 - Parse link message
-- Parse youtbe link message
+- Parse youtube link message
 - Parse image link message
 - Show Online/Offline Status
-- Total participants
-- Interface Languages English, Portuguese (Brazil), French
+- Show Total participants
 - Send message on Ctrl+Enter
-- Interface theme Light/Dark
-- Save settings on LocalStorage
 - Change username
+- Save settings on LocalStorage
 - Reset default settings
+- Interface Languages English, Portuguese (Brazil), French
+- Interface theme Light/Dark
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
