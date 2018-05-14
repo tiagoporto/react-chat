@@ -6,6 +6,13 @@ import { observer, inject } from 'mobx-react'
 @observer
 export class Messages extends Component {
   componentDidUpdate = () => {
+    this.scrollMessages()
+  }
+  componentDidMount = () => {
+    this.scrollMessages()
+  }
+
+  scrollMessages = () => {
     setTimeout(() => {
       this.refs.content.scrollTop = this.refs.content.scrollHeight
     }, 100)
