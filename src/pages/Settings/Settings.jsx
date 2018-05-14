@@ -19,7 +19,9 @@ export class Settings extends Component {
 
   resetDefault = event => {
     event.preventDefault()
+
     this.props.SettingsStore.resetDefault()
+    SettingsService.setLanguage()
     this.props.changeLocale(this.props.SettingsStore.language)
     this.inputUsername.value = this.props.SettingsStore.username
   }
@@ -32,7 +34,7 @@ export class Settings extends Component {
 
           <Color locale={this.props.locale}/>
 
-          <CtrlEnter />
+          <CtrlEnter locale={this.props.locale}/>
 
           <Language changeLocale={this.props.changeLocale}/>
 
