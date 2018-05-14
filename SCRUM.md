@@ -26,29 +26,29 @@
 - [X] CSS Tab (Light)
 - [X] CSS Tab (Dark)
 - [X] CSS Tab (Responsive)
-- [ ] CSS Settings Page (Light)
-- [ ] CSS Settings Page (Dark)
-- [ ] CSS Settings Page (Responsive)
-- [ ] CSS Chat Page (Light)
-- [ ] CSS Chat Page (Dark)
-- [ ] CSS Chat Page (Responsive)
+- [X] CSS Settings Page (Light)
+- [X] CSS Settings Page (Dark)
+- [X] CSS Settings Page (Responsive)
+- [X] CSS Chat Page (Light)
+- [X] CSS Chat Page (Dark)
+- [X] CSS Chat Page (Responsive)
 
 # Sprint 5 - Deadline May 12th
 - [ ] Test
-- [ ] Docs
+- [X] Docs
 - [ ] JSdoc markdown
 - [ ] CSS Modules
 
 # Optional
 - [X] Flow
-- [ ] Date time in chat
+- [X] Date time in chat
 - [ ] Clock Display Local Storage
 - [ ] Message Sound Local Storage
 - [ ] Blink Tab
 - [ ] Smiles support
 - [ ] Unread messages count
-- [ ] User Typing
-- [ ] User joined and left message
+- [X] User Typing
+- [ ] User joined and left
 - [X] Parser links as anchor
 - [X] Parser Youtube link
 - [X] Parser image link
