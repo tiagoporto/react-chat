@@ -1,0 +1,24 @@
+@import '../../../../stylesheet/_settings.styl'
+
+.messages-box
+  $height = 50px
+
+  &__form
+    display: flex
+
+  &__input
+    width: 80%
+    border: 0
+    height: $height
+
+  &__button
+    border: 0
+    width: 20%
+    height: $height
+    background: $primary-color
+    color: #FFF
+    cursor: pointer
+
+    &:hover
+      background: darken($primary-color, 10%)
+

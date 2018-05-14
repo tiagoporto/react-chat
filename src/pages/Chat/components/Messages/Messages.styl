@@ -3,6 +3,7 @@
 .messages
   &-box
     overflow: scroll
+    padding: .5rem 1rem
 
     &__list
       list-style: none
@@ -10,10 +11,16 @@
       margin: 0
 
 .message
-  background: $primary-color
+  background: saturation($primary-color, 60%)
+  color: #FFF
   padding: .4rem 1rem
   display: inline-block
+  word-break: break-all
 
   &--mine
     text-align: right
+
+    .message
+      background: lightness($primary-color, 70%)
+
 

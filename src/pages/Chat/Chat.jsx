@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import T from 'i18n-react'
 import { observer, inject } from 'mobx-react'
-import { ChatService } from './ChatService.js'
 import { Messages } from './components/Messages/Messages.jsx'
 import { Type } from './components/Type/Type.jsx'
 
@@ -10,15 +9,6 @@ import { Type } from './components/Type/Type.jsx'
 export class Chat extends Component {
   static defaultProps = {
     ChatStore: null
-  }
-
-  sendMessage = event => {
-    event.preventDefault()
-
-    if (event.currentTarget.message.value) {
-      ChatService.sendMessage(event.currentTarget.message.value)
-      event.currentTarget.reset()
-    }
   }
 
   render () {
@@ -46,17 +36,7 @@ export class Chat extends Component {
         }
       </p>,
 
-      <form
-        className="field has-addons"
-        onSubmit={this.sendMessage}
-        key="submitForm"
-      >
-        <Type />
-
-        <button type="submit" className="button is-primary">
-          {T.translate('chat.send')}
-        </button>
-      </form>
+      <Type key="form" />
     ])
   }
 }

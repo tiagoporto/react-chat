@@ -1,3 +1,4 @@
+// @flow
 import T from 'i18n-react'
 import { SettingsStore } from './SettingsStore.js'
 

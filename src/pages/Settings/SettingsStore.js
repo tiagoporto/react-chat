@@ -3,22 +3,22 @@ import { observable, action } from 'mobx'
 
 class Settings {
   defaultValues = {
-    userName: `guest${Math.floor(Math.random() * Math.floor(999999))}`,
+    username: `guest${Math.floor(Math.random() * Math.floor(999999))}`,
     interfaceColor: 'light',
     clockDisplay: 12,
     sounds: true,
-    sendCTRL: false,
+    sendCtrlEnter: false,
     language: 'en'
   }
 
   interfaceColorsOptions = ['light', 'dark']
 
-  @observable userName = localStorage.getItem('userName') || this.defaultValues.userName
+  @observable username = localStorage.getItem('username') || this.defaultValues.username
   @observable language = localStorage.getItem('language') || this.defaultValues.language
   @observable interfaceColor = localStorage.getItem('interfaceColor') || this.defaultValues.interfaceColor
+  @observable sendCtrlEnter = (localStorage.getItem('sendCtrlEnter') === 'true') || this.defaultValues.sendCtrlEnter
   @observable clockDisplay = 12
   @observable sounds = true
-  @observable sendCTRL = false
 
   @action
   setLanguage (language: ?string) {
@@ -36,9 +36,15 @@ class Settings {
 
   @action
   setUsername (name: ?string) {
-    const resetName = name || this.defaultValues.userName
-    localStorage.setItem('userName', resetName)
-    this.userName = resetName
+    const resetName = name || this.defaultValues.username
+    localStorage.setItem('username', resetName)
+    this.username = resetName
+  }
+
+  @action
+  setCtrlEnter (state: boolean) {
+    this.sendCtrlEnter = state
+    localStorage.setItem('sendCtrlEnter', state)
   }
 
   @action

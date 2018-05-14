@@ -3,6 +3,7 @@ import T from 'i18n-react'
 import { observer, inject } from 'mobx-react'
 import { Language } from './components/Language/Language.jsx'
 import { Color } from './components/Color/Color.jsx'
+import { CtrlEnter } from './components/CtrlEnter/CtrlEnter.jsx'
 import { Username } from './components/Username/Username.jsx'
 import { SettingsService } from './SettingsService.js'
 
@@ -17,7 +18,7 @@ export class Settings extends Component {
     event.preventDefault()
     this.props.SettingsStore.resetDefault()
     this.props.changeLocale(this.props.SettingsStore.language)
-    this.refs.inputUserName.value = this.props.SettingsStore.userName
+    this.refs.inputUserName.value = this.props.SettingsStore.username
   }
 
   render () {
@@ -27,6 +28,8 @@ export class Settings extends Component {
           <Username />
 
           <Color locale={this.props.locale}/>
+
+          <CtrlEnter />
 
           <Language changeLocale={this.props.changeLocale}/>
 

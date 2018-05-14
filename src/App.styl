@@ -6,6 +6,14 @@
 // Import settings
 @import './stylesheet/_settings.styl'
 
+html
+  box-sizing: border-box
+
+*,
+*:before,
+*:after
+  box-sizing: inherit
+
 body
   font: normal normal  $base-font-size\/rem($base-line-height) $font-family-base
   color: $base-text-color

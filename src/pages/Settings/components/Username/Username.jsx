@@ -18,8 +18,8 @@ export class Username extends Component<{}> {
             type="text"
             ref="inputUserName"
             className="input"
-            placeholder={this.props.SettingsStore.userName}
-            defaultValue={this.props.SettingsStore.userName}
+            placeholder={this.props.SettingsStore.username}
+            defaultValue={this.props.SettingsStore.username}
             onChange={this.changeUsername}
           />
         </label>

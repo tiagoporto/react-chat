@@ -25,7 +25,7 @@ export class ChatService {
     socket.emit('new message', message)
 
     ChatStore.addMessage({
-      username: SettingsStore.userName,
+      username: SettingsStore.username,
       message: message,
       time: new Date(),
       mine: true
@@ -48,7 +48,7 @@ export class ChatService {
   }
 
   static addUser (username: ?string) {
-    socket.emit('add user', SettingsStore.userName)
+    socket.emit('add user', SettingsStore.username)
   }
 
   static updateParticipants (totalParticipants: number) {
