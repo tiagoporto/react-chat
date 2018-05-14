@@ -22,6 +22,7 @@ export class Settings extends Component {
 
     this.props.SettingsStore.resetDefault()
     SettingsService.setLanguage()
+    SettingsService.setColor()
     this.props.changeLocale(this.props.SettingsStore.language)
     this.inputUsername.value = this.props.SettingsStore.username
   }

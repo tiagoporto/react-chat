@@ -14,7 +14,7 @@ class Chat {
   @observable status = false
 
   @action
-  addMessage (message: { [key:any]: string }) {
+  addMessage (message: { [key:any]: any }) {
     this.messages.push(message)
   }
 

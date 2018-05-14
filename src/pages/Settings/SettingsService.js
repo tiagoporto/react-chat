@@ -1,9 +1,8 @@
-// @flow
 import T from 'i18n-react'
 import { SettingsStore } from './SettingsStore.js'
 
 export class SettingsService {
-  static setLanguage (language) {
+  static setLanguage (language: ?string) {
     if (language) {
       SettingsStore.setLanguage(language)
       T.setTexts(require(`../../languages/${language}.json`))
@@ -13,12 +12,12 @@ export class SettingsService {
     }
   }
 
-  static setColor (color) {
+  static setColor (color: ?string) {
     if (color) {
-      document.body.classList.replace(`app--${SettingsStore.interfaceColor}`, `app--${color}`)
+      (document.body.classList: any).replace(`app--${SettingsStore.interfaceColor}`, `app--${color}`)
       SettingsStore.setInterfaceColor(color)
     } else {
-      document.body.classList.add(`app--${SettingsStore.interfaceColor}`)
+      document.body.className = `app--${SettingsStore.interfaceColor}`
     }
   }
 }
