@@ -1,4 +1,4 @@
-#React Chat
+# React Chat
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-yellow.svg)](http://standardjs.com)
 [![js-react-app-style](https://img.shields.io/badge/code%20style-react--app-blue.svg)](https://github.com/patrio/eslint-config-react)
