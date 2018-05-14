@@ -42,17 +42,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [Webpack](https://webpack.js.org/)
 
 ## Running the project
-
+First of all, install dependencies
 ```sh
 npm install
 ```
 
-Main task
+### Start developemnt
 ```sh
 npm start
 ```
 
-Test
+### Build
+```sh
+npm run build
+```
+
+### Test
 
 ```
 npm run test
