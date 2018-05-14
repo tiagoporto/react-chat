@@ -18,11 +18,20 @@
   display: inline-block
   word-break: break-all
 
+  a
+    color: #FFF
+
+    &:hover
+      color: darken($primary-color, 40%)
+
+      .app--dark &
+        color: hue($primary-color, 60%)
+
   &--mine
     text-align: right
 
     .message
-      background: lightness($primary-color, 70%)
+      background: lightness($primary-color, 40%)
 
       .app--dark &
         background: saturation($primary-color-dark, 60%)
