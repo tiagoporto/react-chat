@@ -8,7 +8,7 @@ import ReactGA from 'react-ga'
 
 export class App extends Component {
   componentDidMount () {
-    if (process.env.NODE_ENV !== 'production') {
+    if (process.env.NODE_ENV === 'production') {
       ReactGA.initialize('UA-32351360-4')
       ReactGA.pageview(window.location.pathname)
     }
