@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "http://tiagoporto.github.io/react-chat",
+  "packageManager": "yarn@4.12.0",
   "scripts": {
     "predeploy": "npm run build",
     "flow": "flow",
